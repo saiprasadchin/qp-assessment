@@ -16,10 +16,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 import java.util.Optional;
@@ -61,5 +58,10 @@ public class AuthController {
         user.setRoles(Collections.singletonList(roles));
         userRepository.save(user);
         return  new ResponseEntity<>("User register success!", HttpStatus.OK);
+    }
+
+    @GetMapping("heart-beat")
+    public ResponseEntity<String> heartBeatApi() {
+        return new ResponseEntity<>("Application is up and running...", HttpStatus.OK);
     }
 }
