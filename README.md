@@ -3,6 +3,6 @@
 ### To run the application clone the code base to your local machine and run the below command
 ```
 cd grocery-application/
-docker-compose up @github/clipboard-copy-element
+docker-compose up
 ```
 ### This will build the application as well as bring up the mysql db in docker vm.
