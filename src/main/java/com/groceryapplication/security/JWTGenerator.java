@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 @Component
 public class JWTGenerator {
 
-    private static final String AUTHORITIES_KEY = "AUTHORITIES_KEY";
+    private static final String AUTHORITIES_KEY = "ROLE";
 
     public String generateToken(Authentication authentication) {
         String username = authentication.getName();
